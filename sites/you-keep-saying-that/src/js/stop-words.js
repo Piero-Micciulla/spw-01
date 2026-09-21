@@ -1,0 +1,3 @@
+// Function words excluded from word rankings. Habit words (just, really, actually,
+// basically, literally, probably, maybe) are deliberately absent.
+export const STOP_WORDS=new Set(`a an and are as at be been being but by can could did do does doing for from had has have having he her hers herself him himself his how i if in into is it its itself me more most my myself no nor not of on once only or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up very was we were what when where which while who whom why will with would you your yours yourself yourselves`.split(' '));
