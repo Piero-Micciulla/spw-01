@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Much of the Year Is Gone? — Live Year Progress</title>
+  <meta name="description" content="See the exact percentage of the current year completed, days left, a live day-by-day year grid, and local year milestones.">
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <meta name="theme-color" content="#171713">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="How Much of the Year Is Gone?">
+  <meta property="og:title" content="How Much of the Year Is Gone?"><meta property="og:description" content="A live, local-time portrait of the year in progress.">
+  <meta property="og:url" content="{{SITE_URL}}/"><meta property="og:image" content="{{SITE_URL}}/assets/social-card.png">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How Much of the Year Is Gone? beside an abstract field of year-progress marks">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How Much of the Year Is Gone?">
+  <meta name="twitter:description" content="A live, local-time portrait of the year in progress."><meta name="twitter:image" content="{{SITE_URL}}/assets/social-card.png">
+  <meta name="twitter:image:alt" content="How Much of the Year Is Gone? beside an abstract field of year-progress marks">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"How Much of the Year Is Gone?","url":"{{SITE_URL}}/","description":"A live visualization of the percentage of the current local calendar year that has elapsed."}</script>
+  <script src="/runtime-config.js"></script><script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#explanation">Skip to explanation</a>
+  <header class="masthead"><a class="wordmark" href="/">YEAR / PROGRESS</a><span>Local time · <span id="local-zone">your time zone</span></span></header>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <p class="overline" id="page-title">How much of the year is gone?</p>
+      <div class="percentage-line"><strong id="percentage" aria-hidden="true">0.000000</strong><span aria-hidden="true">%</span></div>
+      <h1><span>OF </span><span id="current-year">THIS YEAR</span><span> IS GONE.</span></h1>
+      <p class="sr-only" id="accessible-summary">Calculating year progress.</p>
+      <div class="day-counts" aria-label="Calendar day summary"><p><strong id="completed-days">0</strong> full days down</p><i aria-hidden="true"></i><p><strong id="remaining-days">0</strong> days after today</p></div>
+      <div class="progress-rule" aria-hidden="true"><span></span></div>
+      <p class="aside-copy">Time continues to happen.</p>
+    </section>
+
+    <section class="year-board" aria-labelledby="year-board-title">
+      <div class="section-heading"><div><p class="overline">The whole thing</p><h2 id="year-board-title">A year, one mark at a time.</h2></div><div class="legend" aria-hidden="true"><span class="past">past</span><span class="present">today</span><span class="future">ahead</span></div></div>
+      <p class="sr-only" id="grid-label"></p><div class="year-grid" id="year-grid" role="img" aria-labelledby="grid-label"></div>
+      <div class="month-ruler" aria-hidden="true"><span>J</span><span>F</span><span>M</span><span>A</span><span>M</span><span>J</span><span>J</span><span>A</span><span>S</span><span>O</span><span>N</span><span>D</span></div>
+      <button class="share-button" id="share-button" type="button">Share this moment <span aria-hidden="true">↗</span></button><p class="share-status" id="share-status" aria-live="polite"></p>
+    </section>
+
+    <aside class="ad-slot" hidden data-ad-slot="after-visualization" aria-label="Reserved advertising space"></aside>
+
+    <section class="facts" aria-labelledby="facts-title"><p class="overline">Right now</p><h2 id="facts-title">The year in small numbers.</h2><ul id="live-facts"><li>Calculating…</li></ul></section>
+    <section class="milestones-section" aria-labelledby="milestones-title"><p class="overline">The markers</p><h2 id="milestones-title">When the year turns.</h2><p>Each moment is calculated between your two local New Years—not from a generic 365-day clock.</p><ol id="milestones"></ol></section>
+    <aside class="ad-slot" hidden data-ad-slot="in-content" aria-label="Reserved advertising space"></aside>
+
+    <article class="explanation" id="explanation">
+      <p class="overline">The useful details</p><h2>What does “year gone” mean?</h2>
+      <div class="questions">
+        <section><h3>How much of the year is gone?</h3><p>The number above is the fraction of your current local calendar year that has elapsed, updated every second.</p></section>
+        <section><h3>How is the percentage calculated?</h3><p>Elapsed time since local midnight on January 1 is divided by the real elapsed time between that instant and local midnight next January 1. The result is multiplied by 100.</p></section>
+        <section><h3>How many days are left this year?</h3><p>The live count shows full calendar days that begin after today. Today is kept separate because part of it has already happened.</p></section>
+        <section><h3>Does it handle leap years?</h3><p>Yes. Leap years contain 366 marks, including February 29; ordinary years contain 365.</p></section>
+        <section><h3>Why does local time matter?</h3><p>New Year arrives at different instants around the world. Your browser supplies local calendar boundaries without location permission or a network request.</p></section>
+        <section><h3>What about daylight saving time?</h3><p>The calculation uses actual timestamps for both local year boundaries. It does not assume every year is exactly 365 or 366 sets of 24 hours.</p></section>
+      </div>
+    </article>
+  </main>
+  <footer><a class="wordmark" href="/">YEAR / PROGRESS</a><p>No pressure. Use the rest wisely. Or don’t.</p><nav aria-label="Footer navigation"><a href="#page-title">Top</a><a href="#explanation">How it works</a><a href="/privacy/">Privacy</a></nav><small>© {{CURRENT_YEAR}} · No cookies, analytics, or advertising.</small></footer>
+</body>
+</html>
