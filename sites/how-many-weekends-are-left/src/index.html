@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>How Many Weekends Are Left? — Live Weekend Countdown</title>
+  <meta name="description" content="See how many weekends and weekend days remain this year, with a live next-weekend countdown based on your local time.">
+  <link rel="canonical" href="{{SITE_URL}}/"><meta name="theme-color" content="#ff5b35">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="How Many Weekends Are Left?">
+  <meta property="og:title" content="How Many Weekends Are Left?"><meta property="og:description" content="A live, local-time countdown to the weekends still waiting this year.">
+  <meta property="og:url" content="{{SITE_URL}}/"><meta property="og:image" content="{{SITE_URL}}/assets/social-card.png">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="How Many Weekends Are Left? with rows of paired Saturday and Sunday tickets">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How Many Weekends Are Left?">
+  <meta name="twitter:description" content="Count the weekends still waiting this year."><meta name="twitter:image" content="{{SITE_URL}}/assets/social-card.png"><meta name="twitter:image:alt" content="How Many Weekends Are Left? with rows of paired weekend tickets">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"How Many Weekends Are Left?","url":"{{SITE_URL}}/","description":"A live count of weekends remaining in the current local calendar year."}</script>
+  <script src="/runtime-config.js"></script><script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#how-it-works">Skip to how it works</a>
+  <header class="masthead"><a class="brand" href="/">SAT / SUN</a><span>Based on your local time · <span id="local-zone">your time zone</span></span></header>
+  <main>
+    <section class="hero" aria-labelledby="question">
+      <p class="eyebrow" id="question">How many weekends are left?</p>
+      <div class="answer" aria-hidden="true"><strong id="weekends-left">—</strong></div>
+      <h1><span id="weekend-word">WEEKENDS</span> LEFT IN <span id="current-year">THIS YEAR</span>.</h1>
+      <p class="state-line" id="state-line" aria-live="polite">COUNTING THE GOOD BITS…</p>
+      <div class="countdown-card"><span id="countdown-label">Next weekend starts in</span><strong id="countdown" aria-live="off">00d 00h 00m 00s</strong></div>
+      <div class="hero-facts"><p><strong id="weekend-days">—</strong><span>remain in the year</span></p><p><strong id="completed-weekends">—</strong><span>already gone</span></p></div>
+    </section>
+
+    <section class="ticket-board" aria-labelledby="board-title">
+      <div class="section-title"><div><p class="eyebrow">Your remaining supply</p><h2 id="board-title">One ticket per weekend.</h2></div><div class="legend" aria-hidden="true"><span class="gone">gone</span><span class="now">now</span><span class="later">left</span></div></div>
+      <p class="sr-only" id="board-label">Calculating weekends.</p><div class="weekend-board" id="weekend-board" role="img" aria-labelledby="board-label"></div>
+      <div class="date-facts"><p><span id="next-label">Next weekend</span><strong id="next-date">—</strong></p><p><span>Last weekend of the year</span><strong id="last-date">—</strong></p></div>
+      <button class="share-button" id="share-button" type="button">Share the mild alarm <span aria-hidden="true">↗</span></button><p class="share-status" id="share-status" aria-live="polite"></p>
+    </section>
+
+    <aside class="ad-slot" hidden data-ad-slot="after-visualization" aria-label="Reserved advertising space"></aside>
+    <article class="explanation" id="how-it-works">
+      <p class="eyebrow">Small print, normal size</p><h2>The weekend maths.</h2>
+      <div class="questions">
+        <section><h3>How many weekends are left this year?</h3><p>The big number counts every weekend owned by this local calendar year that has any time remaining. It updates automatically as weekends begin, end, and the year changes.</p></section>
+        <section><h3>How is a weekend counted?</h3><p>A weekend is Saturday plus Sunday. It belongs to the year containing its Saturday, which gives every weekend one clear owner.</p></section>
+        <section><h3>Does this weekend count?</h3><p>Yes. During Saturday or Sunday, the current weekend still counts because part of it remains. It becomes completed at local Monday 00:00.</p></section>
+        <section><h3>How many weekend days are left?</h3><p>This is counted separately. A Saturday or Sunday counts if that calendar day is today or later and lies inside the current year—so it is not simply weekends multiplied by two.</p></section>
+        <section><h3>What if a weekend crosses New Year?</h3><p>The Saturday decides which year owns it. Only Saturday/Sunday dates actually inside the current year contribute to the weekend-days count.</p></section>
+        <section><h3>Are public holidays included?</h3><p>No. There is no country detection or holiday calendar. Weekend means Saturday and Sunday everywhere in this first version.</p></section>
+        <section><h3>Why does local time matter?</h3><p>Your browser provides local calendar boundaries, including daylight-saving changes. No location permission or timezone service is used.</p></section>
+      </div>
+    </article>
+    <aside class="ad-slot" hidden data-ad-slot="in-content" aria-label="Reserved advertising space"></aside>
+  </main>
+  <footer><a class="brand" href="/">SAT / SUN</a><p>Plans optional. Weekends finite.</p><nav aria-label="Footer navigation"><a href="#question">Top</a><a href="#how-it-works">How it works</a><a href="/privacy/">Privacy</a></nav><small>© {{CURRENT_YEAR}} · No cookies, analytics, or advertising.</small></footer>
+</body></html>
