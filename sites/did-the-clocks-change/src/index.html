@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Did the Clocks Change? Check Your Timezone Now</title>
+  <meta name="description" content="Find out instantly whether the clocks changed, whether they went forward or back, and when the next clock change is in any timezone.">
+  <link rel="canonical" href="{{SITE_URL}}/">
+  <meta name="theme-color" content="#10131b">
+  <meta property="og:type" content="website"><meta property="og:site_name" content="Did the Clocks Change?">
+  <meta property="og:title" content="Did the Clocks Change?"><meta property="og:description" content="A one-second answer for your timezone—with the next change live.">
+  <meta property="og:url" content="{{SITE_URL}}/"><meta property="og:image" content="{{SITE_URL}}/assets/social-card.jpg">
+  <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Did the Clocks Change? A clock face moving between daylight and night">
+  <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Did the Clocks Change?"><meta name="twitter:description" content="A one-second answer for your timezone—with the next change live.">
+  <meta name="twitter:image" content="{{SITE_URL}}/assets/social-card.jpg"><meta name="twitter:image:alt" content="Did the Clocks Change? A clock face moving between daylight and night">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml"><link rel="manifest" href="/site.webmanifest"><link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Did the Clocks Change?","url":"{{SITE_URL}}/","description":"A timezone-aware guide to recent and upcoming UTC offset changes."}</script>
+  <script src="/runtime-config.js"></script><script type="module" src="/js/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#guide">Skip to the clock-change guide</a>
+  <header class="hero">
+    <nav class="topbar" aria-label="Primary navigation"><a class="brand" href="/"><span aria-hidden="true">◷</span> Did the Clocks Change?</a><a href="#changes">Changes</a><a href="#questions">Why?</a></nav>
+    <div class="dial" aria-hidden="true"><i></i><b></b></div>
+    <main class="answer" aria-labelledby="question">
+      <p class="zone-line"><span class="pulse" aria-hidden="true"></span> Checking <strong id="zone-name">your timezone</strong></p>
+      <h1 id="question">Did the clocks change?</h1>
+      <p class="verdict" id="verdict" aria-hidden="true">—</p>
+      <p class="headline" id="headline">Checking the clocks…</p>
+      <div class="countdown" id="countdown" aria-label="Time until the next clock change" hidden>
+        <span><strong id="days">0</strong><small>days</small></span><i>:</i><span><strong id="hours">00</strong><small>hours</small></span><i>:</i><span><strong id="minutes">00</strong><small>minutes</small></span><i>:</i><span><strong id="seconds">00</strong><small>seconds</small></span>
+      </div>
+      <p class="direction" id="direction">Finding the next offset change…</p>
+      <form class="zone-picker" id="zone-form"><label for="zone-input">Check another timezone</label><div class="zone-control"><input id="zone-input" name="timezone" type="text" role="combobox" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-controls="zone-options" aria-expanded="false" aria-describedby="zone-help zone-error"><button type="submit">Check</button><ul id="zone-options" class="zone-options" role="listbox" aria-label="Timezones" hidden></ul></div><small id="zone-help">Search by a city-style IANA timezone, such as Europe/London.</small><strong class="error" id="zone-error" role="alert"></strong></form>
+      <p class="sr-only" id="status" aria-live="polite"></p>
+      <a class="scroll-cue" href="#guide">How do we know? <span aria-hidden="true">↓</span></a>
+    </main>
+  </header>
+  <aside class="ad-slot" hidden data-ad-slot="after-hero" aria-label="Reserved advertising space"></aside>
+  <div class="content" id="guide">
+    <section id="changes" aria-labelledby="changes-title"><p class="kicker">Your clock, decoded</p><h2 id="changes-title">When do the clocks change?</h2><p class="lede">Clock changes follow local rules, not one global calendar. We read the selected timezone’s current rules and look for real changes in its UTC offset.</p>
+      <div class="change-grid"><article><h3>Previous change</h3><p id="previous-change">Calculating…</p></article><article><h3>Next change</h3><p id="next-change">Calculating…</p></article></div>
+      <p class="note">A “recent” change means one in the past 72 hours. Dates reflect the timezone data installed in your browser, so governments’ future rule changes may appear after your browser updates.</p>
+    </section>
+    <aside class="ad-slot" hidden data-ad-slot="in-content" aria-label="Reserved advertising space"></aside>
+    <section class="split" aria-labelledby="direction-title"><div><p class="kicker">Forward or back?</p><h2 id="direction-title">The tiny time-travel guide</h2></div><div class="cards"><article class="sun"><span aria-hidden="true">↗</span><h3>Forward</h3><p>The displayed time jumps ahead. A one-hour move means the familiar “lose an hour” shorthand; some places move by only 30 minutes.</p></article><article class="moon"><span aria-hidden="true">↙</span><h3>Back</h3><p>The displayed time repeats an interval. You “gain” that amount of clock time, though elapsed time itself carries on normally.</p></article></div></section>
+    <section class="questions" id="questions" aria-labelledby="questions-title"><p class="kicker">Time, explained</p><h2 id="questions-title">About daylight saving time</h2>
+      <details open><summary>Did the clocks change last night?</summary><p>The answer above checks your chosen IANA timezone. A YES appears for 72 hours after an offset transition, with the direction and exact amount.</p></details>
+      <details><summary>What is daylight saving time (DST)?</summary><p>Daylight saving time is a seasonal convention that moves civil clocks, usually to shift more usable daylight into the evening. The reliable fact this site detects is an actual UTC-offset change; not every historical or political offset change is necessarily DST.</p></details>
+      <details><summary>Do I gain or lose an hour?</summary><p>Forward means you lose the skipped amount of displayed clock time; back means you gain the repeated amount. It is often one hour, but not always—Australia/Lord_Howe commonly changes by 30 minutes.</p></details>
+      <details><summary>Does every country change its clocks?</summary><p>No. Many places, including Japan and most near the equator, do not currently make seasonal clock changes. Some countries contain multiple timezones with different rules.</p></details>
+      <details><summary>Why do countries change on different dates?</summary><p>Clock rules are set by governments and shaped by seasons, latitude, history, and policy. Northern and Southern Hemisphere schedules are therefore different, and rules can change.</p></details>
+      <details><summary>What happens where DST is not used?</summary><p>If no offset transition exists within our three-year search horizon, the page says the timezone does not currently change its clocks. Its local time still advances normally.</p></details>
+    </section>
+  </div>
+  <footer><div><strong><span aria-hidden="true">◷</span> Did the Clocks Change?</strong><p>One useful answer, right on time.</p></div><nav aria-label="Footer navigation"><a href="#question">Answer</a><a href="#changes">Changes</a><a href="#questions">About DST</a><a href="/privacy/">Privacy</a></nav><small>© <span id="current-year">{{CURRENT_YEAR}}</span> Did the Clocks Change? · No tracking, cookies, or location requests.</small></footer>
+</body></html>
