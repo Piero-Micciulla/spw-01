@@ -1,0 +1,16 @@
+import test from'node:test';import assert from'node:assert/strict';import{assess,normalizeDevice}from'../src/js/engine.js';
+const c=(v=[230],f=[50],p=['C','F'])=>({voltages:v,frequencies:f,plugs:p});const d=(a,b=a,f=[50,60],p='A')=>({voltageMin:a,voltageMax:b,frequencies:f,plug:p});
+test('universal input on 230/50 is electrical match',()=>assert.equal(assess(d(100,240),c()).state,'adapter'));
+test('120/60 on 230/50 reports both',()=>assert.equal(assess(d(120,120,[60]),c()).state,'voltage-frequency-stop'));
+test('220-240/50 on 230/50',()=>assert.equal(assess(d(220,240,[50],'C'),c()).state,'direct'));
+test('220-240 on 120',()=>assert.equal(assess(d(220,240),c([120],[60],['A'])).state,'voltage-stop'));
+test('120 50/60 on 120/60',()=>assert.equal(assess(d(120,120,[50,60],'A'),c([120],[60],['A'])).state,'direct'));
+test('plug mismatch is adapter only',()=>assert.equal(assess(d(100,240),c()).state,'adapter'));
+test('all compatible is direct',()=>assert.equal(assess(d(100,240,[50,60],'F'),c()).state,'direct'));
+test('frequency mismatch is caution',()=>assert.equal(assess(d(230,230,[60],'F'),c()).state,'check'));
+test('unknown has no verdict',()=>assert.equal(assess({unknown:true},c()).state,'unknown'));
+test('malformed is invalid',()=>assert.equal(assess({voltageMin:'x',plug:'A'},c()).state,'invalid'));
+test('range boundaries inclusive',()=>{assert.equal(assess(d(230,240,[50],'C'),c([230])).voltage,'compatible');assert.equal(assess(d(220,230,[50],'C'),c([230])).voltage,'compatible')});
+test('multiple plug types',()=>assert.equal(assess(d(230,230,[50],'E'),c([230],[50],['C','E'])).state,'direct'));
+test('multiple supplies only one covered is uncertain',()=>assert.equal(assess(d(127,127,[60],'N'),c([127,220],[60],['C','N'])).state,'check'));
+test('normalizer rejects reversed range and bad plug',()=>{assert.equal(normalizeDevice(d(240,100)),null);assert.equal(normalizeDevice(d(100,240,[50],'Z')),null)});
