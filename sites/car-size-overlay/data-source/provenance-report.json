@@ -1,0 +1,88 @@
+{
+  "generated": "2026-09-22",
+  "primary_source": "Transport Canada — Canadian Vehicle Specifications (CVS)",
+  "source_url": "https://open.canada.ca/data/en/dataset/913f8940-036a-45f2-a5f2-19bde76c1252",
+  "license": "Open Government Licence – Canada",
+  "attribution": "Contains information licensed under the Open Government Licence – Canada.",
+  "snapshot": "2021 English CSV",
+  "original_records": 1024,
+  "complete_plausible_records": 1013,
+  "usable_curated_records": 240,
+  "rejected_total": 92,
+  "rejection_reasons": {
+    "missing required dimension": 5,
+    "implausible or contradictory dimension": 6,
+    "duplicate dimensional variant": 81
+  },
+  "not_selected_after_balanced_curation": 692,
+  "makes": [
+    "Acura",
+    "Aston Martin",
+    "Audi",
+    "Bentley",
+    "Bmw",
+    "Buick",
+    "Cadillac",
+    "Chevrolet",
+    "Chrysler",
+    "Ferrari",
+    "Ford",
+    "Genesis",
+    "Honda",
+    "Hyundai",
+    "Infiniti",
+    "Jeep",
+    "Kia",
+    "Land Rover",
+    "Lexus",
+    "Mazda",
+    "Mercedes-Benz",
+    "Mini",
+    "Mitsubishi",
+    "Nissan",
+    "Polestar",
+    "Porsche",
+    "Subaru",
+    "Tesla",
+    "Toyota",
+    "Volkswagen",
+    "Volvo"
+  ],
+  "body_type_distribution": {
+    "coupe": 21,
+    "hatchback": 11,
+    "mpv": 4,
+    "pickup": 7,
+    "sedan": 87,
+    "suv": 101,
+    "wagon": 9
+  },
+  "width_semantics": "OW is Overall Width in centimetres. Catalog records were retained only where values are consistent with body width excluding mirrors; mirror width is not present.",
+  "ambiguous_width_records": 0,
+  "missing_dimension_records": 5,
+  "duplicate_generation_records": 81,
+  "suspicious_outliers": [
+    {
+      "source_row": 841,
+      "record": "MERCEDES-BENZ EQS CLASS EV 4DR SEDAN",
+      "issue": "OW=293 cm, rejected as implausible"
+    },
+    {
+      "source_row": 980,
+      "record": "VOLKSWAGEN ATLAS CROSS SPORT",
+      "issue": "curb-weight anomaly is outside fields shipped and was not imported"
+    }
+  ],
+  "manually_verified": [
+    "Volkswagen Golf 4DR Hatch (2015 geometry)",
+    "Tesla Model Y 4DR SUV AWD (2021 geometry)",
+    "Tesla Model 3 Long Range AWD (2018 geometry)",
+    "Audi Q5 4DR SUV (2021 geometry)",
+    "Toyota RAV4 AWD (2019 geometry)",
+    "Honda CR-V AWD (2017 geometry)"
+  ],
+  "secondary_sources": [
+    "AutoSeeker Open Car Data (license and coverage evaluation; not imported because wheelbase is absent)",
+    "Transport Canada CVS data dictionary (field semantics)"
+  ]
+}
