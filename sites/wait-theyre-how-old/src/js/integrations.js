@@ -1,1 +1,0 @@
-export function initIntegrations(config=window.SITE_CONFIG||{}){document.documentElement.dataset.analytics=config.analyticsId?'configured':'disabled';document.querySelectorAll('[data-ad-slot]').forEach(x=>{x.hidden=!config.adsenseClient})}

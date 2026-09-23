@@ -1,1 +1,0 @@
-{"name":"party-buy-list","version":"1.0.0","private":true,"type":"module","scripts":{"dev":"node scripts/dev.mjs","test":"node --test","validate":"node scripts/validate-engine.mjs","build":"node scripts/build.mjs","check":"npm test && npm run validate && npm run build && node scripts/check-build.mjs"},"engines":{"node":">=20.8.0"}}

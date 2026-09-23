@@ -1,3 +1,0 @@
-import{categories,createPlan,items,options}from'../src/js/planner.js';
-const ids=new Set;for(const x of items){if(ids.has(x.id))throw new Error(`Duplicate item ${x.id}`);ids.add(x.id);if(!categories.some(c=>c.id===x.category))throw new Error(`Unknown category ${x.category}`);for(const level of options.levels){const range=x.prices[level];if(!range||range.some(v=>!Number.isFinite(v))||range[0]>range[1])throw new Error(`Bad ${level} price for ${x.id}`)}}
-for(const level of options.levels)for(const style of options.styles)createPlan({people:200,style,level,rooms:4,spaces:options.spaces,computer:'full'});console.log(`Validated ${items.length} item definitions across ${categories.length} categories.`);

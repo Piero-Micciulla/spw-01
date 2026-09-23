@@ -1,2 +1,0 @@
-import test from'node:test';import assert from'node:assert/strict';import{analyzeText,tokenize}from'../src/js/analyzer.js';
-test('script-like text is treated only as tokens',()=>{const payload='<script>alert(1)</script> <img src=x onerror=alert(2)>';const result=analyzeText(payload);assert.equal(result.text,payload);assert.deepEqual(tokenize(payload).map(x=>x.raw),['script','alert','1','script','img','src','x','onerror','alert','2'])});

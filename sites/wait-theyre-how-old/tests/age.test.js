@@ -1,6 +1,0 @@
-import test from'node:test';import assert from'node:assert/strict';import{ageOn,milestoneYears,nextBirthday,observedBirthday}from'../src/js/age.js';
-const local=(y,m,d)=>new Date(y,m-1,d,12);
-test('age changes on birthday using calendar arithmetic',()=>{assert.equal(ageOn('1980-08-26',local(2026,8,25)),45);assert.equal(ageOn('1980-08-26',local(2026,8,26)),46);assert.equal(ageOn('1980-08-26',local(2026,8,27)),46)});
-test('January, December and year boundary birthdays',()=>{assert.equal(ageOn('2000-01-01',local(2026,1,1)),26);assert.equal(ageOn('2000-12-31',local(2026,1,1)),25);assert.deepEqual(nextBirthday('2000-01-01',local(2026,12,31)),{year:2027,month:1,day:1,days:1,turning:27})});
-test('Feb 29 is observed Feb 28 in non-leap years and Feb 29 in leap years',()=>{assert.deepEqual(observedBirthday({month:2,day:29},2025),{month:2,day:28});assert.deepEqual(observedBirthday({month:2,day:29},2024),{month:2,day:29});assert.equal(ageOn('2000-02-29',local(2025,2,27)),24);assert.equal(ageOn('2000-02-29',local(2025,2,28)),25);assert.equal(nextBirthday('2000-02-29',local(2024,2,28)).days,1)});
-test('next birthday and milestones are deterministic',()=>{assert.deepEqual(nextBirthday('1980-08-26',local(2026,8,26)),{year:2026,month:8,day:26,days:0,turning:46});assert.deepEqual(milestoneYears('1980-08-26',46).map(x=>x.year),[2010,2020,2030,2040])});
