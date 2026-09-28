@@ -118,4 +118,6 @@ $('#zone-form').addEventListener('submit', event => {
 try { const saved = localStorage.getItem('clock-timezone'); if (saved && isValidTimeZone(saved)) selectedZone = saved; } catch {}
 render(new Date());
 setInterval(() => { const now = new Date(); if (+now >= nextRefresh) render(now, true); else updateCountdown(now); }, 1000);
-$('#current-year').textContent = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
+$('#current-year').textContent = currentYear;
+$('#changes-year').textContent = currentYear;
